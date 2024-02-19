@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Additional resets */
+@layer base {
+  .user_formatted {
+    p, ol, ul {
+      line-height: inherit
+    }
+    hr {
+      background: none;
+      border-top-style: solid;
+    }
+  }
+}
