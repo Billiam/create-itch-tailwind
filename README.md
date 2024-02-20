@@ -1,4 +1,7 @@
-# Create Itch Tailwind
+# create-itch-tailwind 
+
+[![package version](https://img.shields.io/npm/v/create-itch-tailwind.svg?style=flat-square)](https://npmjs.org/package/create-itch-tailwind)
+
 
 Vite and Tailwind based CSS and HTML generator for itch.io [custom css](https://itch.io/docs/creators/css-guide) project pages.
 
@@ -6,6 +9,8 @@ This project is a spiritual successor to [itchpack](https://github.com/billiam/i
 
 Instead, Itch Tailwind is a collection of build scripts and configuration in a convenient project generator, so you can 
 customize it as needed.
+
+![Animation of create-itch-tailwind usage, showing interactive prompt to generate a new project, run a development server and create HTML and CSS output files](https://github.com/billiam/create-itch-tailwind/raw/main/docs/demo.gif?raw=true)
 
 ## Features
 
@@ -19,6 +24,8 @@ customize it as needed.
 * Automatically prefix all new classes with `-custom` in the CSS and HTML output
 
 ## Usage
+
+Itch tailwind is designed to create one css file and one html file in an output directory, which you can then copy to your itch.io page.
 
 ### Generate a new project
 

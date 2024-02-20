@@ -4,6 +4,18 @@
   "description": "Vite and Tailwind based CSS and HTML generator for itch.io project pages",
   "main": "bin/cli.js",
   "type": "module",
+  "author": "Billiam",
+  "license": "ISC",
+  "files": [
+    "lib/*",
+    "template/build/*",
+    "template/src/data.yml",
+    "template/src/index.css",
+    "template/.prettier*",
+    "template/gitignore",
+    "template/package.json",
+    "template/*.config.js"
+  ],
   "bin": {
     "create-itch-tailwind": "bin/cli.js"
   },
@@ -14,8 +26,6 @@
     "js-beautify": "^1.15.1",
     "node-html-parser": "^6.1.12"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "prettier": "^3.2.5",
     "prettier-plugin-sort-imports": "^1.8.3"

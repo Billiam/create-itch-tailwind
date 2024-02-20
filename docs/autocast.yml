@@ -1,0 +1,59 @@
+settings:
+  title: demo
+  width: 80
+  height: 23
+  type_speed: 80ms
+
+instructions:
+  - !Interactive
+    command: create-itch-tailwind
+    keys:
+      - 1s
+      - m
+      - y
+      - '-'
+      - g
+      - a
+      - m
+      - e
+      - 500ms
+      - ^m
+      - 1s
+      - y
+      - 500ms
+      - ^m
+      - 2s
+      - ^m
+  - !Wait 1s
+  - !Command
+    command: cd my-game
+  - !Wait 200ms
+  - !Command
+    command: npm install
+  - !Wait 500ms
+  - !Command
+    command: create-itch-tailwind fetch-templates https://billiam.itch.io/wheeler
+  - !Wait 1s
+  - !Command
+    command: tree --gitignore
+  - !Wait 2s
+  - !Interactive
+    command: npm run dev
+    keys:
+      - 2s
+      - ^c
+  - !Wait 500ms
+  - !Command
+    command: npm run build
+  - !Wait 1500ms
+  - !Command
+    command: ls dist
+  - !Wait 500ms
+  - !Command
+    command: cat dist/style.css
+  - !Wait 500ms
+  - !Command
+    command: ^M
+  - !Command
+    command: npm run copy-css
+
