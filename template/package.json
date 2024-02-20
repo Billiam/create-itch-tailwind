@@ -2,13 +2,16 @@
   "scripts": {
     "dev": "cross-env TAILWIND_MODE=watch vite",
     "build": "cross-env TAILWIND_MODE=build vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "copy-css": "cat dist/style.css | clipboard",
+    "copy-html": "cat dist/index.html | clipboard"
   },
   "type": "module",
   "devDependencies": {
     "@tailwindcss/typography": "tailwindcss/typography",
     "@vituum/vite-plugin-posthtml": "^1.1.0",
     "autoprefixer": "^10.4.17",
+    "clipboard-cli": "^4.0.0",
     "cross-env": "^7.0.3",
     "cssnano": "^6.0.3",
     "ejs": "^3.1.9",

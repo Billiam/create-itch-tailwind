@@ -73,6 +73,8 @@ Copy the contents of `dist/index.html`, and paste it into your project's descrip
 
 Copy the contents of `dist/style.css` to your project's custom css field in your project's theme editor.
 
+The commands `npm run copy-html` and `npm run copy-css` will copy these to your clipboard.
+
 ### Working with template data
 
 Data in `/src/data.yml` (or `/src/data.json`) can be used in your templates using [posthtml-expressions](https://github.com/posthtml/posthtml-expressions) tags.
