@@ -66,6 +66,13 @@ This will download your project's HTML content to `src/index.html` and the stati
 
 By default, files that already exist will be skipped.
 
+### Development server
+
+Once your project has been set up and your templates are downloaded, you can launch the development server using `npm run start`.
+
+Open http://localhost:5173 (by default) to view your project preview. Changes to
+your templates, data, or CSS will reload the page.
+
 ### Generate your HTML and CSS
 
 When your project is ready, generate the final HTML and CSS using:
