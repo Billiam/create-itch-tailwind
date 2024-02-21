@@ -141,7 +141,7 @@ Then, include your handlebars content from your index page:
 
 ```html
 <header>
-  <include src="my-handlebars-partial.hbs" type="handlebars">
+  <include src="my-handlebars-partial.hbs" type="handlebars"></include>
 </header>
 ```
 
