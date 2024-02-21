@@ -1,10 +1,10 @@
-export default (filePaths = []) => {
+export default (filePaths = [], callback) => {
   return {
     name: 'watch-extra-files',
     configureServer(server) {
       const handleFileChange = (file) => {
         if (filePaths.includes(file)) {
-          server.ws.send({ type: 'full-reload' })
+          callback(file, server)
         }
       }
       server.watcher.add(filePaths)

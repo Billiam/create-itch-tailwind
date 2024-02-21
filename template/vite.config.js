@@ -7,6 +7,7 @@ import { defineConfig } from 'vite'
 import posthtml from '@vituum/vite-plugin-posthtml'
 import include from 'posthtml-include'
 import whatever from 'posthtml-include-whatever'
+import { ViteMinifyPlugin } from 'vite-plugin-minify'
 
 import { injectCss } from './build/inject-css'
 import templateRenderers from './build/template-renderers'
@@ -48,9 +49,9 @@ export default defineConfig(({ command }) => {
     },
     assetsDir: '.',
     build: {
-      cssMinify: false,
       cssCodeSplit: false,
       emptyOutDir: true,
+      minify: false,
       outDir,
       rollupOptions: {
         output: {
@@ -69,15 +70,18 @@ export default defineConfig(({ command }) => {
             root: src,
             locals
           }),
-          include({ root: src, posthtmlExpressionsOptions: { locals } }),
+          include({ root: src, posthtmlExpressionsOptions: { locals, missingLocal: '' } }),
           ...filterInnerTree({
             classFilter: isBuild ? null : 'user_formatted',
             plugins: [htmlCssPrefix({ prefix: 'custom-' }), stripLimitedAttributes]
           })
         ]
       }),
-      watchExtraFiles([dataFilePath].filter(Boolean))
-    ]
+      isBuild && ViteMinifyPlugin(),
+      watchExtraFiles([dataFilePath].filter(Boolean), (file, server) => {
+        server.restart()
+      })
+    ].filter(Boolean)
   }
 
   if (isBuild) {
