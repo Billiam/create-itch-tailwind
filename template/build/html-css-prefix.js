@@ -15,6 +15,6 @@ const processTree = (prefix) => (tree) => {
   })
 }
 
-export default ({ classFilter, prefix } = {}) => {
+export default ({ prefix } = {}) => {
   return processTree(prefix)
 }

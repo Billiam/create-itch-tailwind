@@ -1,6 +1,6 @@
 import posthtml from 'posthtml'
 
-export default ({ classFilter, plugins } = {}) => {
+export default ({ classFilter, plugins = [] } = {}) => {
   if (!classFilter) {
     return plugins
   }
@@ -14,10 +14,9 @@ export default ({ classFilter, plugins } = {}) => {
 
   return [
     (tree) => {
-      // return tree
       return tree.match({ attrs: { class: classRegex } }, (node) => {
         if (node.content) {
-          posthtml().use(plugins).process(node.content, { skipParse: true })
+          posthtml(plugins).process(node.content, { skipParse: true })
         }
         return node
       })
