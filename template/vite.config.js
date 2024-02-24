@@ -73,7 +73,10 @@ export default defineConfig(({ command }) => {
           include({ root: src, posthtmlExpressionsOptions: { locals, missingLocal: '' } }),
           ...filterInnerTree({
             classFilter: isBuild ? null : 'user_formatted',
-            plugins: [htmlCssPrefix({ prefix: 'custom-' }), stripLimitedAttributes]
+            plugins: [
+              htmlCssPrefix({ prefix: 'custom-' }),
+              stripLimitedAttributes({ pageUrl: locals?.itch_url ?? '' })
+            ]
           })
         ]
       }),
