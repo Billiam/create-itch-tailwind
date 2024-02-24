@@ -16,8 +16,7 @@ customize it as needed.
 
 * HTML/CSS hot reloading via [Vite](https://vitejs.dev/)
 * Split and organize assets with `@import` and `<include src="myfile.html">`
-* Built in support for templating with HTML (using [posthtml-expressions](https://github.com/posthtml/posthtml-expressions)) and EJS
-* Pluggable templating for other formats like, handlebars, markdown, etc. using [posthtml-include-whatever](https://github.com/billiam/posthtml-include-whatever)
+* Built in support for templating (using [posthtml-expressions](https://github.com/posthtml/posthtml-expressions))
 * Data-driven templates (`data.yml` or `data.json` contents are passed to templates)
 * All project configuration and build steps are available to customize within your project
 * Supports TailwindCSS
@@ -111,42 +110,6 @@ headings:
 </each>
 ```
 
-### Adding new template formats
-
-If you'd like to use another template format not included with Itch Tailwind, you can!
-
-Add the relevant template processor, like handlebars:
-
-```sh
-npm add handlebars
-```
-
-Edit `build/template-renderers.js`, and add a new method to the exported object, which accepts a template file and returns a string:
-
-```js
-import fs from 'fs'
-import Handlebars from 'handlebars'
-
-export default {
-  //...
-  handlebars: (template, { encoding, locals }) => {
-    const templateData = fs.readFileSync(template, encoding)
-    const hbTemplate = Handlebars.compile(templateData)
-    return hbTemplate(locals)
-  }
-}
-```
-
-Then, include your handlebars content from your index page:
-
-```html
-<header>
-  <include src="my-handlebars-partial.hbs" type="handlebars"></include>
-</header>
-```
-
-See also: [Limitations](#limitations)
-
 ### Default styles
 
 By default, Tailwind adds a number of CSS resets, that mostly unstyle the content of your project page. 
@@ -160,12 +123,6 @@ You can add some base styles in `/src/index.css` (https://v1.tailwindcss.com/doc
 You can disable this reset entirely by removing or commenting out the `scopedPreflightStyles` plugin in `tailwind.config.js`, and removing the "additional resets" section added in `/src/index.css`
 
 You can also enable the [tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin) plugin (commented out by default in `tailwind.config.js`), and add the `prose` class to a wrapper element in your project.
-
-## Limitations
-
-The default `<include>` tag, which supports variables and expressions, does _not_ support nested include tags for other template types. All nested include tags will be treated as HTML content, regardless of the `type`.
-
-If you want to include other template formats (like ejs, pug, handlebars etc) within HTML templates, you can replace the default call to `<include "index.html">` in the root `index.html` template file with `<include "index.html" type="html">`. This template type is not expression-aware, but _does_ support nested non-html templates. 
 
 ## I want to use this, but not Tailwind
 

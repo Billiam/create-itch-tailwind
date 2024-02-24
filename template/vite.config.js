@@ -6,11 +6,9 @@ import { defineConfig } from 'vite'
 
 import posthtml from '@vituum/vite-plugin-posthtml'
 import include from 'posthtml-include'
-import whatever from 'posthtml-include-whatever'
 import { ViteMinifyPlugin } from 'vite-plugin-minify'
 
 import { injectCss } from './build/inject-css'
-import templateRenderers from './build/template-renderers'
 import watchExtraFiles from './build/watch-extra-files'
 import htmlCssPrefix from './build/html-css-prefix'
 import filterInnerTree from './build/filter-inner-tree'
@@ -65,11 +63,6 @@ export default defineConfig(({ command }) => {
         root: src,
         include: false,
         plugins: [
-          whatever({
-            renderers: templateRenderers,
-            root: src,
-            locals
-          }),
           include({ root: src, posthtmlExpressionsOptions: { locals, missingLocal: '' } }),
           ...filterInnerTree({
             classFilter: isBuild ? null : 'user_formatted',
