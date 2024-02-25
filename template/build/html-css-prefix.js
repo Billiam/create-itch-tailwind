@@ -11,6 +11,9 @@ const processTree = (prefix) => (tree) => {
         })
         .join(' ')
     }
+    if (typeof node.content === 'string' && node.content.indexOf('<') !== -1) {
+      node.content = tree.parser(node.content);
+    }
     return node
   })
 }
