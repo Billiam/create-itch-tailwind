@@ -2,6 +2,7 @@ import { templateClasses } from './build/template-classes.cjs'
 
 export default {
   plugins: {
+    'postcss-import': {},
     'tailwindcss/nesting': {},
     tailwindcss: {},
     'postcss-prefixer': {
