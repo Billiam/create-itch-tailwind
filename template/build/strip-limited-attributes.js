@@ -7,6 +7,11 @@ export default ({ pageUrl } = {}) => (tree) =>
     // id attributes not allowed
     delete node?.attrs?.id
 
+    // escape HTML comments
+    if (typeof node === 'string') {
+      return node.replace(/<!--/g, '&lt;!--')
+    }
+
     // only http links allowed
     if (node.tag === 'a' && node.attrs?.href) {
       if (pageUrl && node.attrs.href.startsWith('#')) {
