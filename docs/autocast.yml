@@ -32,13 +32,13 @@ instructions:
     command: npm install
   - !Wait 500ms
   - !Command
-    command: create-itch-tailwind fetch-templates https://billiam.itch.io/wheeler
+    command: create-itch-tailwind fetch-templates https://billiam.itch.io/itchpack-tailwind
   - !Wait 1s
   - !Command
     command: tree --gitignore
   - !Wait 2s
   - !Interactive
-    command: npm run dev
+    command: npm run start
     keys:
       - 2s
       - ^c
