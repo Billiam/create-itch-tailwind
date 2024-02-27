@@ -1,4 +1,6 @@
-const blacklistedTags = ['script', 'link', 'picture', 'nav', 'section', 'article', 'aside', 'header', 'footer']
+const blacklistedTags = ['address', 'article', 'aside', 'audio', 'bdi', 'button', 'canvas', 'caption', 'data',
+  'embed',  'fieldset', 'footer', 'form', 'header', 'hgroup',  'input', 'ins', 'label', 'link', 'main', 'math',
+  'meter', 'nav', 'object', 'optgroup', 'option', 'picture', 'progress', 'script', 'section', 'select', 'svg']
 
 export default ({ pageUrl } = {}) => (tree) =>
   tree.walk((node) => {
