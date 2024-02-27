@@ -17,7 +17,6 @@
     "postcss": "^8.4.35",
     "postcss-include": "^0.3.1",
     "postcss-prefix-selector": "^1.16.0",
-    "postcss-prefixer": "^3.0.0",
     "posthtml-include": "^1.7.4",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
