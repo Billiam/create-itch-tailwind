@@ -4,8 +4,8 @@ import typography from '@tailwindcss/typography'
 import { templateClasses } from './build/template-classes'
 
 export default {
-  // HTML and ejs files will be scanned for tailwind classes.
-  content: ['./src/**/*.{html,ejs}'],
+  // HTML files will be scanned for tailwind classes.
+  content: ['./src/**/*.html'],
   theme: {
     extend: {}
   },
@@ -15,8 +15,8 @@ export default {
     // Enable .prose class. Remove to reduce CSS if not needed
     // typography({ target: 'legacy' })
   ],
-  // whitelist all class names from template file so that they can be targetted if needed
-  // add your own classes here if they're part of the itch.io UI you're targetting
+  // whitelist all class names from template file so that they can be targeted if needed.
+  // add your own classes here if they're part of the itch.io UI you're targeting
   // but don't appear in your base template
   safelist: [...Array.from(templateClasses)],
   corePlugins: {
