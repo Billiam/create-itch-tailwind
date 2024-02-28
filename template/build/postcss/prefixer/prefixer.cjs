@@ -7,7 +7,7 @@ const {
 
 
 const prefixNode = (node, prefix) => {
-  if (['class', 'id'].includes(node.type)) {
+  if (['class'].includes(node.type)) {
     return Object.assign({}, node, { name: `${prefix}${node.name}` });
   }
 
