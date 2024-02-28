@@ -1,3 +1,4 @@
+// Allows restarting dev server when data file changes
 export default (filePaths = [], callback) => {
   return {
     name: 'watch-extra-files',

@@ -2,6 +2,8 @@ const posthtml = require('posthtml')
 const path = require('path')
 const fs = require('fs')
 
+// build collection of classes that will not be prefixed with `custom-` and will not be stripped from CSS output
+
 const templateClasses = new Set()
 
 const template = fs.readFileSync(path.resolve(__dirname, '../index.html'), 'utf-8')

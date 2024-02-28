@@ -2,6 +2,7 @@ const blacklistedTags = ['address', 'article', 'aside', 'audio', 'bdi', 'button'
   'embed',  'fieldset', 'footer', 'form', 'header', 'hgroup',  'input', 'ins', 'label', 'link', 'main', 'math',
   'meter', 'nav', 'object', 'optgroup', 'option', 'picture', 'progress', 'script', 'section', 'select', 'svg']
 
+// Escape HTML nodes which are not allowed on itch.io
 export default ({ pageUrl } = {}) => (tree) =>
   tree.walk((node) => {
     // id attributes not allowed

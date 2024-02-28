@@ -1,3 +1,5 @@
+// Dynamically add CSS to an HTML file so that it can be exported
+// and remove the css link tag from the HTML output
 export const injectCss = ({ build = true }) => {
   const cssPath = `${build ? '' : 'src'}/index.css`
 

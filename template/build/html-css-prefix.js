@@ -1,3 +1,4 @@
+// prefix HTML classes
 const processTree = (prefix) => (tree) => {
   tree.walk((node) => {
     const classes = node?.attrs?.class?.trim()?.split(/\s+/)?.filter(Boolean)
