@@ -6,7 +6,7 @@ settings:
 
 instructions:
   - !Interactive
-    command: create-itch-tailwind
+    command: npx create-itch-tailwind
     keys:
       - 1s
       - m
@@ -32,7 +32,7 @@ instructions:
     command: npm install
   - !Wait 500ms
   - !Command
-    command: create-itch-tailwind fetch-templates https://billiam.itch.io/itchpack-tailwind
+    command: npx create-itch-tailwind fetch-templates https://billiam.itch.io/itch-tailwind
   - !Wait 1s
   - !Command
     command: tree --gitignore
