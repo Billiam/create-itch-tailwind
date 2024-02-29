@@ -1,6 +1,6 @@
 {
   "name": "create-itch-tailwind",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vite and Tailwind based CSS and HTML generator for itch.io project pages",
   "main": "bin/cli.js",
   "type": "module",
