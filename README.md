@@ -37,7 +37,7 @@ Follow prompts to name your new project, and (optionally) download your project'
 ```sh
 cd <new project>
 npm install
-npm run dev
+npm run start
 ```
 
 ### Project structure
